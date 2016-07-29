@@ -9,10 +9,10 @@ import re
 import pdb
 import logging
 
-logging.basicConfig(level=logging.INFO,  
-                    format='\n%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s \n%(message)s',  
-                    datefmt='%a, %d %b %Y %H:%M:%S', 
-                    filemode='w')   
+logging.basicConfig(level=logging.INFO,
+                    format='\n%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s \n%(message)s',
+                    datefmt='%a, %d %b %Y %H:%M:%S',
+                    filemode='w')
 
 class GitOSCAutoDeploy(BaseHTTPRequestHandler):
     CONFIG_FILEPATH = './GitAutoDeploy.conf.json'
@@ -45,7 +45,7 @@ class GitOSCAutoDeploy(BaseHTTPRequestHandler):
                 if not os.path.isdir(os.path.join(repository['path'], '.git')) \
                         and not os.path.isdir(os.path.join(repository['path'], 'objects')):
                     try:
-                        call([['git clone' + " " + repository['url'] + " " + repository['path']]], shell=True)
+                        os.system('git clone' + " " + repository['url'] + " " + repository['path'])
                     except:
                         sys.exit('Can NOT clone repository directory into ' + os.path.isdir(repository['path']))
                         # sys.exit('Directory ' + repository['path'] + ' is not a Git repository')
@@ -53,7 +53,7 @@ class GitOSCAutoDeploy(BaseHTTPRequestHandler):
     def getHeader(self):
         content_type = self.headers.getheader('content-type')
         content_length = int(self.headers.getheader('content-length'))
-        
+
         request_header = self.headers
         logging.debug('Password:[%s]' % self.headers.getheader('Password'))
         logging.debug('%s %s %s',self.command, self.path , self.request_version)
@@ -76,7 +76,7 @@ class GitOSCAutoDeploy(BaseHTTPRequestHandler):
         self.getData()
 
     def do_POST(self):
-        self.getHeader()         
+        self.getHeader()
         event = self.headers.getheader('Password')
 
         if event == '123.56.234.219':
@@ -117,7 +117,7 @@ class GitOSCAutoDeploy(BaseHTTPRequestHandler):
         except Exception:
             # do http decode
             import urllib
-            body = urllib.unquote(body)            
+            body = urllib.unquote(body)
         try:
             json.loads(body)
         except Exception:
@@ -129,6 +129,13 @@ class GitOSCAutoDeploy(BaseHTTPRequestHandler):
             self.url = url
             self.validateurl()
         return [payload['push_data']['repository']['url']]
+    def getMatchingNaems(self, repoName):
+        res = []
+        config = self.getConfig()
+        for repository in config['repositories']:
+            if (repository['name'] == repoName):
+                res.append(repository['path'])
+        return res
 
     def getMatchingPaths(self, repoUrl):
         res = []
@@ -147,7 +154,7 @@ class GitOSCAutoDeploy(BaseHTTPRequestHandler):
         if (not self.quiet):
             print "\nPost push request received"
             print 'Updating ' + path
-            call([['cd "' + path + '" && git pull -f']], shell=True)
+            os.system('cd "' + path + '" && git pull -f')
 	    print 'pull complete '
     def deploy(self, path):
         config = self.getConfig()
@@ -161,7 +168,7 @@ class GitOSCAutoDeploy(BaseHTTPRequestHandler):
                     if branch is None or branch == self.branch:
                         if (not self.quiet):
                             print 'Executing deploy command'
-                            call([['cd "' + path + '" && ' + repository['deploy']]], shell=True)
+                            os.system('cd "' + path + '" && ' + repository['deploy'])
 			    print 'deploy complete '
                     elif not self.quiet:
                         print 'Push to different branch (%s != %s), not deploying' % (branch, self.branch)

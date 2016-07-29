@@ -3,18 +3,18 @@
     "repositories":
     [
         {
+            "name":"GitAutoDeploy",
+            "branch": "master",
             "url": "https://github.com/DingGuodong/Github-Auto-Deploy",
             "path": "./GitAutoDeploy"
         },
 
         {
+
         "url": "https://git.oschina.net/keyixinxi/yyg.git",
-        "path": "../yyg"
-        },
-        {
         "url": "git@git.oschina.net:keyixinxi/yyg.git",
         "path": "../yyg"
         }
-	
+
     ]
 }
