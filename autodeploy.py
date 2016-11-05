@@ -126,7 +126,11 @@ class GitOSCAutoDeploy(BaseHTTPRequestHandler):
         #     # do remove 5 character
         #     body = body[5:]
         ####
-        payload = json.loads(body)
+        try:
+            payload = json.loads(body)
+        except Exception:
+            body = body[5:]
+            payload = json.loads(body)
         self.branch = payload['hook']['push_data']['ref']
         for url in [payload['hook']['push_data']['repository']['url']]:
             self.url = url
