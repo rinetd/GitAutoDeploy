@@ -117,6 +117,8 @@ class GitOSCAutoDeploy(BaseHTTPRequestHandler):
             # do http decode
             import urllib
             body = urllib.unquote(body)
+
+        logging.debug('%s' % body)
         ### new
             json.loads(body)
         ### old
