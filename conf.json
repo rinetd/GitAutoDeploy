@@ -1,56 +1,35 @@
 {
   "port": 8001,
-  "repositories":
-  [
-      {
-      "url": "https://git.oschina.net/keyixinxi/php_yiming.git",
-      "path": "/var/www/www-data/yiming/"
-      },
-      {
+  "repositories": [{
       "url": "git@git.oschina.net:keyixinxi/php_yiming.git",
       "path": "/var/www/www-data/yiming/"
-      },
-      {
-      "url": "https://git.oschina.net/keyixinxi/chengzhi.git",
-      "path": "/var/www/www-data/chengzhi/"
-      },
-      {
-      "url": "git@git.oschina.net:keyixinxi/chengzhi.git",
-      "path": "/var/www/www-data/chengzhi/"
-      },
-      {
-      "url": "https://git.oschina.net/keyixinxi/sharehtml.git",
-      "path": "/var/www/php/sharehtml/"
-      },
-      {
-      "url": "git@git.oschina.net:keyixinxi/sharehtml.git",
-      "path": "/var/www/html/sharehtml/"
-      },
-      {
+    }, {
+      "url": "https://git.oschina.net/keyixinxi/php_yiming.git",
+      "path": "/var/www/www-data/yiming/"
+    },
+
+    {
       "url": "git@git.oschina.net:keyixinxi/guanwang.git",
       "path": "/var/www/www-data/guanwang/"
-      },
-      {
+    }, {
       "url": "https://git.oschina.net/keyixinxi/guanwang.git",
       "path": "/var/www/www-data/guanwang/"
-      },
-      {
-      "url": "https://git.oschina.net/keyixinxi/yiming_php_server.git",
-      "path": "/var/www/html/yiming_php_server/"
-      },
-      {
-      "url": "git@git.oschina.net:keyixinxi/yiming_php_server.git",
-      "path": "/var/www/html/yiming_php_server/"
-      },
-      {
-      "url": "https://git.oschina.net/keyixinxi/pifa.git",
-      "path": "/var/www/html/pifa"
-      },
-      {
+    },
+
+    {
+      "url": "git@git.oschina.net:keyixinxi/chengzhi.git",
+      "path": "/var/www/www-data/chengzhi/"
+    }, {
+      "url": "https://git.oschina.net/keyixinxi/chengzhi.git",
+      "path": "/var/www/www-data/chengzhi/"
+    },
+
+    {
       "url": "git@git.oschina.net:keyixinxi/pifa.git",
       "path": "/var/www/html/pifa"
-      }
-
+    }, {
+      "url": "https://git.oschina.net/keyixinxi/pifa.git",
+      "path": "/var/www/html/pifa"
+    }
   ]
-
 }

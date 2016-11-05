@@ -1,3 +1,4 @@
+/*手动测试*/
 {
   "hook": {
     "password": "123456",
@@ -32,6 +33,45 @@
         }
       }],
       "total_commits_count": 2,
+      "commits_more_than_ten": false
+    }
+  }
+}
+/*git 自动更新*/
+{
+  "hook": {
+    "password": "123456",
+    "hook_name": "push_hooks",
+    "push_data": {
+      "before": "213971b52f478b84dd938c97b1050affc93d51b0",
+      "after": "a76f5ea7285e10b9c0672ee08b2e7cb682333b6d",
+      "ref": "refs/heads/master",
+      "user_id": 811894,
+      "user_name": "rootky",
+      "user": {
+        "id": 811894,
+        "email": "rootky@163.com",
+        "name": "rootky",
+        "time": "2016-11-05T10:37:09+08:00"
+      },
+      "repository": {
+        "name": "php_yiming",
+        "url": "git@git.oschina.net:keyixinxi/php_yiming.git",
+        "description": "new yiming  \u793c\u7269\u8bf4 onethink",
+        "homepage": "http://git.oschina.net/keyixinxi/php_yiming"
+      },
+      "commits": [{
+        "id": "a76f5ea7285e10b9c0672ee08b2e7cb682333b6d",
+        "message": "readme",
+        "timestamp": "2016-11-05T10:37:55+08:00",
+        "url": "http://git.oschina.net/keyixinxi/php_yiming/commit/a76f5ea7285e10b9c0672ee08b2e7cb682333b6d",
+        "author": {
+          "name": "rinetd",
+          "email": "rinetd@163.com",
+          "time": "2016-11-05T10:37:55+08:00"
+        }
+      }],
+      "total_commits_count": 1,
       "commits_more_than_ten": false
     }
   }
