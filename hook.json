@@ -1,0 +1,38 @@
+{
+  "hook": {
+    "password": "123456",
+    "hook_name": "push_hooks",
+    "push_data": {
+      "before": "0000000000000000000000000000000000000000",
+      "after": "ec7159240a346fa5988913aa3057b902a4acb126",
+      "ref": "refs/heads/master",
+      "user_id": 811894,
+      "user_name": "rootky",
+      "user": {
+        "id": 811894,
+        "email": "rootky@163.com",
+        "name": "rootky",
+        "time": "2016-11-05T08:51:42+08:00"
+      },
+      "repository": {
+        "name": "php_yiming",
+        "url": "https://git.oschina.net/keyixinxi/php_yiming.git",
+        "description": "new yiming  \u793c\u7269\u8bf4 onethink",
+        "homepage": "http://git.oschina.net/keyixinxi/php_yiming"
+      },
+      "commits": [{
+        "id": "ec7159240a346fa5988913aa3057b902a4acb126",
+        "message": "A Test For WebHooks",
+        "timestamp": "2015-11-06T13:21:07+08:00",
+        "url": "http://git.oschina.net/keyixinxi/php_yiming/commit/ec7159240a346fa5988913aa3057b902a4acb126",
+        "author": {
+          "name": "rootky",
+          "email": "rootky@163.com",
+          "time": "2015-11-06T13:21:07+08:00"
+        }
+      }],
+      "total_commits_count": 2,
+      "commits_more_than_ten": false
+    }
+  }
+}

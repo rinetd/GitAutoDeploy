@@ -118,17 +118,22 @@ class GitOSCAutoDeploy(BaseHTTPRequestHandler):
             # do http decode
             import urllib
             body = urllib.unquote(body)
-        try:
+        ### 新协议
             json.loads(body)
-        except Exception:
-            # do remove 5 character
-            body = body[5:]
+        ### 旧协议
+        # try:
+        #     json.loads(body)
+        # except Exception:
+        #     # do remove 5 character
+        #     body = body[5:]
+        ####
         payload = json.loads(body)
-        self.branch = payload['push_data']['ref']
-        for url in [payload['push_data']['repository']['url']]:
+        self.branch = payload['hook']['push_data']['ref']
+        for url in [payload['hook']['push_data']['repository']['url']]:
             self.url = url
             self.validateurl()
-        return [payload['push_data']['repository']['url']]
+        return [payload['hook']['push_data']['repository']['url']]
+        
     def getMatchingNaems(self, repoName):
         res = []
         config = self.getConfig()
