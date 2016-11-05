@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+# -*- coding:utf-8 -*-
 import json
 import os
 import sys
@@ -133,7 +133,7 @@ class GitOSCAutoDeploy(BaseHTTPRequestHandler):
             self.url = url
             self.validateurl()
         return [payload['hook']['push_data']['repository']['url']]
-        
+
     def getMatchingNaems(self, repoName):
         res = []
         config = self.getConfig()
