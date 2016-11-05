@@ -15,7 +15,7 @@ logging.basicConfig(level=logging.INFO,
                     filemode='w')
 
 class GitOSCAutoDeploy(BaseHTTPRequestHandler):
-    CONFIG_FILEPATH = './GitAutoDeploy.conf.json'
+    CONFIG_FILEPATH = './conf.json'
     config = None
     quiet = False
     daemon = False
@@ -155,6 +155,8 @@ class GitOSCAutoDeploy(BaseHTTPRequestHandler):
             print "\nPost push request received"
             print 'Updating ' + path
             os.system('cd "' + path + '" && git pull -f')
+            os.system('chown -R www-data:www-data '+path)
+
 	    print 'pull complete '
     def deploy(self, path):
         config = self.getConfig()
