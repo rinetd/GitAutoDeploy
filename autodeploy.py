@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# -*- coding:utf-8 -*-
 import json
 import os
 import sys
@@ -118,9 +117,9 @@ class GitOSCAutoDeploy(BaseHTTPRequestHandler):
             # do http decode
             import urllib
             body = urllib.unquote(body)
-        ### 新协议
+        ### new
             json.loads(body)
-        ### 旧协议
+        ### old
         # try:
         #     json.loads(body)
         # except Exception:
