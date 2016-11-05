@@ -8,7 +8,7 @@ import re
 import pdb
 import logging
 
-logging.basicConfig(level=logging.INFO,
+logging.basicConfig(level=logging.DEBUG,
                     format='\n%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s \n%(message)s',
                     datefmt='%a, %d %b %Y %H:%M:%S',
                     filemode='w')
@@ -111,7 +111,6 @@ class GitOSCAutoDeploy(BaseHTTPRequestHandler):
 
     def parseRequest(self):
         body = self.getData()
-        logging.debug('%s' % body)
         try:
             json.loads(body)
         except Exception:
@@ -119,25 +118,25 @@ class GitOSCAutoDeploy(BaseHTTPRequestHandler):
             import urllib
             body = urllib.unquote(body)
 
-        ### new
-            json.loads(body)
-        ### old
-        # try:
-        #     json.loads(body)
-        # except Exception:
-        #     # do remove 5 character
-        #     body = body[5:]
-        ####
         try:
-            payload = json.loads(body)
+            json.loads(body)
         except Exception:
+            # do remove 5 character
             body = body[5:]
-            payload = json.loads(body)
-        self.branch = payload['hook']['push_data']['ref']
-        for url in [payload['hook']['push_data']['repository']['url']]:
+        ###
+        payload = json.loads(body)
+
+        self.branch = payload['push_data']['ref']
+        for url in [payload['push_data']['repository']['url']]:
             self.url = url
             self.validateurl()
-        return [payload['hook']['push_data']['repository']['url']]
+        return [payload['push_data']['repository']['url']]
+
+        # self.branch = payload['hook']['push_data']['ref']
+        # for url in [payload['hook']['push_data']['repository']['url']]:
+        #     self.url = url
+        #     self.validateurl()
+        # return [payload['hook']['push_data']['repository']['url']]
 
     def getMatchingNaems(self, repoName):
         res = []
