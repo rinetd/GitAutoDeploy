@@ -111,6 +111,7 @@ class GitOSCAutoDeploy(BaseHTTPRequestHandler):
 
     def parseRequest(self):
         body = self.getData()
+        logging.debug('%s' % body)
         try:
             json.loads(body)
         except Exception:
@@ -118,7 +119,6 @@ class GitOSCAutoDeploy(BaseHTTPRequestHandler):
             import urllib
             body = urllib.unquote(body)
 
-        logging.debug('%s' % body)
         ### new
             json.loads(body)
         ### old
