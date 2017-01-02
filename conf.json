@@ -1,14 +1,6 @@
 {
   "port": 8001,
   "repositories": [{
-      "url": "git@git.oschina.net:keyixinxi/php_yiming.git",
-      "path": "/var/www/www-data/yiming/"
-    }, {
-      "url": "https://git.oschina.net/keyixinxi/php_yiming.git",
-      "path": "/var/www/www-data/yiming/"
-    },
-
-    {
       "url": "git@git.oschina.net:keyixinxi/guanwang.git",
       "path": "/var/www/www-data/guanwang/"
     }, {
@@ -17,19 +9,11 @@
     },
 
     {
-      "url": "git@git.oschina.net:keyixinxi/chengzhi.git",
-      "path": "/var/www/www-data/chengzhi/"
+      "url": "git@git.oschina.net:keyixinxi/ym_php.git",
+      "path": "/var/www/yimeng/www-data/"
     }, {
-      "url": "https://git.oschina.net/keyixinxi/chengzhi.git",
-      "path": "/var/www/www-data/chengzhi/"
-    },
-
-    {
-      "url": "git@git.oschina.net:keyixinxi/pifa.git",
-      "path": "/var/www/html/pifa"
-    }, {
-      "url": "https://git.oschina.net/keyixinxi/pifa.git",
-      "path": "/var/www/html/pifa"
+      "url": "https://git.oschina.net/keyixinxi/ym_php.git",
+      "path": "/var/www/yimeng/www-data/"
     }
   ]
 }
