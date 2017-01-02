@@ -1,19 +1,10 @@
 {
   "port": 8001,
   "repositories": [{
-      "url": "git@git.oschina.net:keyixinxi/guanwang.git",
-      "path": "/var/www/www-data/guanwang/"
-    }, {
-      "url": "https://git.oschina.net/keyixinxi/guanwang.git",
-      "path": "/var/www/www-data/guanwang/"
-    },
-
-    {
-      "url": "git@git.oschina.net:keyixinxi/ym_php.git",
-      "path": "/var/www/yimeng/www-data/"
-    }, {
-      "url": "https://git.oschina.net/keyixinxi/ym_php.git",
-      "path": "/var/www/yimeng/www-data/"
-    }
-  ]
+    "url": "git@git.oschina.net:keyixinxi/ym_php.git",
+    "path": "/var/www/yimeng/www-data/"
+  }, {
+    "url": "https://git.oschina.net/keyixinxi/ym_php.git",
+    "path": "/var/www/yimeng/www-data/"
+  }]
 }
